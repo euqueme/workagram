@@ -1,0 +1,26 @@
+<nav>
+    <% if logged_in? %>
+    <h1> <%= current_name %> </h1>
+    <ul>        
+        <li class="h_li">
+        <%= link_to 'Following', '#'%>
+        </li>
+        <li class="h_li">
+        <%= link_to 'Followers', '#' %>
+        </li>
+        <li class="h_li">
+        <%= link_to 'HOME', '#' %>
+        </li>
+        <li class="h_li">
+        <%= link_to 'PROFILE', '#' %>
+        </li>
+        <li class="h_li">
+        <%= link_to "Log out", logout_path, method: :delete %>
+        </li>
+    <% else %>
+    <ul class="h_ul">
+        <li class="h_li"><%= link_to "Log in", login_path, class: 'new_article h_a' %></li>
+        <li class="h_li"><%= link_to "Sign up", signup_path, class: 'new_article h_a' %></li>
+    <% end %>
+    </ul>
+</nav>

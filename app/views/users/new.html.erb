@@ -1,0 +1,16 @@
+<h1>Sign up</h1>
+
+<div>
+  <div>
+    <%= form_for @user, url: {action: "create"} do |f| %>
+
+      <%= f.label :username %>
+      <%= f.text_field :username%>
+
+      <%= f.label 'Full name' %>
+      <%= f.text_field :fullname %>
+
+      <%= f.submit "Create my account" %>
+    <% end %>
+  </div>
+</div>
