@@ -3,6 +3,7 @@
 <div>
   <div>
     <%= form_for @user, url: {action: "create"} do |f| %>
+      <%= render 'shared/errors', object: f.object %>
 
       <%= f.label :username %>
       <%= f.text_field :username%>

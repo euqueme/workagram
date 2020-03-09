@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     if !user.nil?
       remember(user)
       flash[:info] = 'User Logged in'
-      redirect_to user
+      redirect_to root_path
     else
       flash.now[:danger] = 'User doesn\'t exist'
       render 'new'
