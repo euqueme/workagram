@@ -9,10 +9,10 @@
         <%= link_to 'Followers', '#' %>
         </li>
         <li>
-        <%= link_to 'HOME', '#' %>
+        <%= link_to 'HOME', root_path %>
         </li>
         <li>
-        <%= link_to 'PROFILE', '#' %>
+        <%= link_to 'PROFILE', current_user %>
         </li>
         <li>
         <%= link_to "Log out", logout_path, method: :delete %>

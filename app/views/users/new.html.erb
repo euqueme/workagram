@@ -11,7 +11,15 @@
       <%= f.label 'Full name' %>
       <%= f.text_field :fullname %>
 
+      <%= f.label 'Photo' %>  
+      <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %>
+
+      
+      <%= f.label 'cover image' %>
+      <%= f.file_field :coverimage, accept: 'image/jpeg,image/gif,image/png' %>
+
       <%= f.submit "Create my account" %>
     <% end %>
   </div>
 </div>
+

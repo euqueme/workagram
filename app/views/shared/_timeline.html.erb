@@ -1,0 +1,12 @@
+<% works.each do |work| %>
+<li >
+  <div>
+    <div>
+      <%= link_to work.author.fullname, user_path(work.author) %>    
+    </div>
+  </div>
+  <p>
+    <%= work.text %>
+  </p>
+</li>
+<% end %>

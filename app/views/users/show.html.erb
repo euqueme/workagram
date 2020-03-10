@@ -1,2 +1,43 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<section>
+  <%= image_tag @user.coverimage.url.to_s if @user.coverimage? %>
+  <% if current_user? @user %>
+  <%= form_for(@user) do |f| %>
+    <%= render 'shared/errors', object: f.object %>
+      <span>
+        <%= f.file_field :coverimage, accept: 'image/jpeg,image/gif,image/png' %>
+      </span>
+      <span>
+        <%= f.submit "Update" %>
+      </span>
+  <% end %>
+  <% end %>
+    <article>
+    <h3>ALL WORKS / NO REPLIES</h3>
+      <ul >
+      <%= timeline_user(@user) %>
+      </ul>
+    </article>
+</section>
+<aside>
+<h3><%= @user.fullname %></h3>
+<%= image_tag @user.photo.url if @user.photo? %>
+<% if current_user? @user %>
+<%= form_for(@user) do |f| %>
+    <%= render 'shared/errors', object: f.object %>
+      <span>
+        <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %>
+      </span>
+      <span>
+        <%= f.submit "Update" %>
+      </span>
+  <% end %>
+<% elsif following?(@user)  %>
+<%= form_for(current_user.followings.build) do |f| %>
+    <div><%= hidden_field_tag :followed_id, @user.id %></div>
+    <%= f.submit "Follow" %>
+<% end %>  
+<% end %>
+  <h3>FOLLOWED BY</h3>
+
+</aside>

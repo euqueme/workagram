@@ -15,4 +15,6 @@ class User < ApplicationRecord
     has_many :followers, through: :reverse_followings, source: :follower
 
     scope :ordered_by_most_recent, -> { order(created_at: :desc) }
+    mount_uploader :coverimage, PictureUploader
+    mount_uploader :photo, PictureUploader
 end
