@@ -4,6 +4,7 @@ class WorksController < ApplicationController
   def index
     @work = Work.new
     timeline_works
+    timeline_follows
   end
 
   def create
@@ -24,7 +25,11 @@ class WorksController < ApplicationController
     end
 
     def timeline_works
-      @timeline_works ||= Work.all.sorted_by_most_recent#.where('author_id IN (?)', users)
+      @timeline_works ||= Work.all.sorted_by_most_recent.where("author_id IN (#{current_user.id},?)",following)
+    end
+
+    def timeline_follows
+      @timeline_follows ||= User.all.ordered_by_most_recent.where("id NOT IN (#{current_user.id},?)",following)
     end
 
 end

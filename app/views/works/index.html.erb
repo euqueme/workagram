@@ -1,19 +1,22 @@
-<div>
-<h2>WORKAGRAM SOMETHING</h2>
-  <div>
+<section>
+<h3>WORKAGRAM SOMETHING</h3>
     <%= form_for @work, url: {action: "create"} do |f| %>
 
-      <%= f.label :text %>
-      <%= f.text_field :text %>
+      <%= f.text_field :text, :placeholder => "New comment", style: "width: 500px;height: 25px;" %>
 
-      <%= f.submit "submit" %>
     <% end %>
-  </div>
-</div>
+</section>
 
 <article>
-<h2>NEW WORKAGRAMS</h2>
+<h3>NEW WORKAGRAMS</h3>
   <ul >
   <%= render @timeline_works %>
   </ul>
 </article>
+
+<aside>
+<h3>WHO TO FOLLOW</h3>
+<ul >
+<%= render @timeline_follows %>
+</ul>
+</aside>

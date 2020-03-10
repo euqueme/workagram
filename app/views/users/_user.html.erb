@@ -1,0 +1,11 @@
+<li >
+<div>
+  <div>
+    <%= link_to user.fullname, user_path(user) %>
+  </div>
+</div>
+<%= form_for(current_user.followings.build) do |f| %>
+    <div><%= hidden_field_tag :followed_id, user.id %></div>
+    <%= f.submit "Follow" %>
+<% end %>
+</li>
