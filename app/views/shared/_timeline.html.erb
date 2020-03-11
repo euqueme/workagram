@@ -2,8 +2,10 @@
 <li >
   <div>
     <div>
+      <%= image_tag work.author.photo.url if work.author.photo? %>
       <%= link_to work.author.fullname, user_path(work.author) %>    
     </div>
+      <%= image_tag work.picture.url %>
   </div>
   <p>
     <%= work.text %>

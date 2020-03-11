@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy, :index]
+  before_action :logged_in_user, only: [:create, :index]
 
   def index
     @work = Work.new
@@ -12,15 +12,15 @@ class WorksController < ApplicationController
       flash[:success] = "work created!"
       redirect_to root_path
     else
-      @feed_items = []
-      redirect_to redirect_back(fallback_location: root_path)
+      flash[:error] = "couldn\'nt create work"
+      redirect_to root_path
     end
   end
 
   private
 
     def work_params
-      params.require(:work).permit(:text)
+      params.require(:work).permit(:text, :picture)
     end
 
     def timeline_follows

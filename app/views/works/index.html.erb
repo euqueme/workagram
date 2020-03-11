@@ -1,9 +1,9 @@
 <section>
 <h3>WORKAGRAM SOMETHING</h3>
     <%= form_for @work, url: {action: "create"} do |f| %>
-
+      <%= render 'shared/errors', object: f.object %>
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
       <%= f.text_field :text, :placeholder => "New comment", style: "width: 500px;height: 25px;" %>
-
     <% end %>
 </section>
 

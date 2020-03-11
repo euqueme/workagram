@@ -58,18 +58,6 @@
 
   <h3>FOLLOWED BY</h3>
   <ul>
-  <% timeline_followed(@user).each do |user| %>
-  <li >
-  <div>
-    <div>
-      <%= link_to user.fullname, user_path(user) %>
-    </div>
-  </div>
-  <%= form_for(current_user.followings.build) do |f| %>
-      <div><%= hidden_field_tag :followed_id, user.id %></div>
-      <%= f.submit "Follow" if current_user != user && following?(user)%>
-  <% end %>
-  </li>
-  <% end %>
+  <%= timeline_followers(@user) %>
   </ul>
 </aside>
