@@ -1,6 +1,6 @@
 
 <section>
-  <%= image_tag @user.coverimage.url.to_s if @user.coverimage? %>
+  <%= image_tag @user.coverimage.url.to_s, class: "cover_img float-left" if @user.coverimage? %>
   <%= picture_form(@user, :coverimage) %>
     <article>
     <h3>ALL WORKS / NO REPLIES</h3>
@@ -11,7 +11,7 @@
 </section>
 
 <aside>
-  <%= image_tag @user.photo.url if @user.photo? %>
+  <%= image_tag @user.photo.url, class: "photo img-circle float-left" if @user.photo? %>
   <h3><%= @user.fullname.upcase %></h3>
   <%= picture_form(@user, :photo) %>
   <%= follow_form(@user) %>

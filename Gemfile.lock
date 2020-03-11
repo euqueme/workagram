@@ -59,9 +59,14 @@ GEM
       zeitwerk (~> 2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    autoprefixer-rails (9.7.4)
+      execjs
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.1)
     capybara (3.31.0)
@@ -86,6 +91,7 @@ GEM
     dry-inflector (0.2.0)
     erubi (1.9.0)
     excon (0.72.0)
+    execjs (2.7.0)
     ffi (1.12.2)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -419,6 +425,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
+  bootstrap-sass (~> 3.3)
   byebug
   capybara (>= 2.15)
   carrierwave (= 1.2.2)

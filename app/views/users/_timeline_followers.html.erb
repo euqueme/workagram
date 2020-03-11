@@ -2,7 +2,7 @@
     <li>
     <div>
       <div>
-        <%= image_tag user.photo.url if user.photo? %>
+        <%= image_tag user.photo.url, class: "photo img-circle float-left" if user.photo? %>
         <%= link_to user.fullname, user_path(user) %>
       </div>
     </div>

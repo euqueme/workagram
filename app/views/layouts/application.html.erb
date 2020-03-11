@@ -7,15 +7,19 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500&display=swap" rel="stylesheet">
   </head>
 
-  <body>
-    <header>
+  <body class="container-fluid row col-12">
+    <header class="col-3 float-left">
       <%= render 'layouts/navbar' %>
     </header>
     <% flash.each do |message_type, message| %>
       <p class="flash"><%= message %></p>
     <% end %>
+    <div class= "col-8 float-left">
     <%= yield %>
+    <div>
   </body>
 </html>
