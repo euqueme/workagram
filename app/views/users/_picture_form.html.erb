@@ -1,0 +1,9 @@
+<%= form_for(user) do |f| %>
+  <%= render 'shared/errors', object: f.object %>
+    <span>
+      <%= f.file_field simbol, accept: 'image/jpeg,image/gif,image/png' %>
+    </span>
+    <span>
+      <%= f.submit "Update" %>
+    </span>
+<% end %>

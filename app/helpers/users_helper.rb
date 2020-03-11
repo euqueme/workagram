@@ -20,6 +20,14 @@ module UsersHelper
   def current_user?(user)
     current_user == user
   end
+
+  def picture_form(user, simbol)
+    render partial: 'users/picture_form', locals: { user: user, simbol: :simbol } if current_user? user
+  end
+
+  def follow_form(user)
+    render partial: 'users/follow_form', locals: { user: user } if following? user
+  end
   
 end
   
