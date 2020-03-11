@@ -19,25 +19,57 @@
       </ul>
     </article>
 </section>
-<aside>
-<h3><%= @user.fullname %></h3>
-<%= image_tag @user.photo.url if @user.photo? %>
-<% if current_user? @user %>
-<%= form_for(@user) do |f| %>
-    <%= render 'shared/errors', object: f.object %>
-      <span>
-        <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %>
-      </span>
-      <span>
-        <%= f.submit "Update" %>
-      </span>
-  <% end %>
-<% elsif following?(@user)  %>
-<%= form_for(current_user.followings.build) do |f| %>
-    <div><%= hidden_field_tag :followed_id, @user.id %></div>
-    <%= f.submit "Follow" %>
-<% end %>  
-<% end %>
-  <h3>FOLLOWED BY</h3>
 
+<aside>
+  <%= image_tag @user.photo.url if @user.photo? %>
+  <h3><%= @user.fullname.upcase %></h3>
+  <% if current_user? @user %>
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/errors', object: f.object %>
+        <span>
+          <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %>
+        </span>
+        <span>
+        <%= f.submit "Update" %>
+        </span>
+    <% end %>
+  <% elsif following?(@user)  %>
+    <%= form_for(current_user.followings.build) do |f| %>
+      <div>
+        <%= hidden_field_tag :followed_id, @user.id %>
+      </div>
+      <%= f.submit "Follow" %>
+    <% end %>  
+  <% end %>
+  <ul>  
+    <li>
+      <h3><%= @user.works.count%></h2> 
+      <p>Works</p>
+    </li>      
+    <li>
+      <h3><%= @user.following.count%></h2> 
+      <p>Following</p>
+    </li>
+    <li>
+      <h3><%= @user.followers.count %></h3>
+      <p>Followers</p>
+    </li>
+  </ul>
+
+  <h3>FOLLOWED BY</h3>
+  <ul>
+  <% timeline_followed(@user).each do |user| %>
+  <li >
+  <div>
+    <div>
+      <%= link_to user.fullname, user_path(user) %>
+    </div>
+  </div>
+  <%= form_for(current_user.followings.build) do |f| %>
+      <div><%= hidden_field_tag :followed_id, user.id %></div>
+      <%= f.submit "Follow" if current_user != user && following?(user)%>
+  <% end %>
+  </li>
+  <% end %>
+  </ul>
 </aside>

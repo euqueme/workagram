@@ -23,9 +23,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    #par = Hash.new
-    #par[:coverimage] = params[:coverimage] if params[:coverimage]
-    #par[:photo] = params[:user][:photo] if params[:user][:photo]
+
     if @user.update(user_params)
       flash[:success] = 'User updated'
       redirect_to current_user

@@ -10,7 +10,7 @@ class WorksController < ApplicationController
     @work= current_user.works.build(work_params)
     if @work.save
       flash[:success] = "work created!"
-      redirect_to redirect_back(fallback_location: root_path)
+      redirect_to root_path
     else
       @feed_items = []
       redirect_to redirect_back(fallback_location: root_path)

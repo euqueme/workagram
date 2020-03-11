@@ -2,12 +2,16 @@
     <% if logged_in? %>
     <h1> <%= current_name %> </h1>
     <ul>        
-        <li>
-        <%= link_to 'Following', '#'%>
-        </li>
-        <li>
-        <%= link_to 'Followers', '#' %>
-        </li>
+      <li>
+         <h3><%= current_user.following.count%></h2> 
+         <p>Following</p>
+      </li>
+      <li>
+        <h3><%= current_user.followers.count %></h3>
+        <p>Followers</p>
+      </li>
+    </ul>
+    <ul>        
         <li>
         <%= link_to 'HOME', root_path %>
         </li>
