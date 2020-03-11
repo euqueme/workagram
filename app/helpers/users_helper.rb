@@ -22,7 +22,7 @@ module UsersHelper
   end
 
   def picture_form(user, simbol)
-    render partial: 'users/picture_form', locals: { user: user, simbol: :simbol } if current_user? user
+    render partial: 'users/picture_form', locals: { user: user, simbol: simbol } if current_user? user
   end
 
   def follow_form(user)
