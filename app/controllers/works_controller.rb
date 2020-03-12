@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :logged_in_user, only: [:create, :index]
+  before_action :logged_in_user, only: %i[create index]
 
   def index
     @work = Work.new
@@ -7,24 +7,22 @@ class WorksController < ApplicationController
   end
 
   def create
-    @work= current_user.works.build(work_params)
+    @work = current_user.works.build(work_params)
     if @work.save
-      flash[:success] = "work created!"
-      redirect_to root_path
+      flash[:success] = 'work created!'
     else
       flash[:error] = "couldn\'nt create work"
-      redirect_to root_path
     end
+    redirect_to root_path
   end
 
   private
 
-    def work_params
-      params.require(:work).permit(:text, :picture)
-    end
+  def work_params
+    params.require(:work).permit(:text, :picture)
+  end
 
-    def timeline_follows
-      @timeline_follows ||= User.all.ordered_by_most_recent.where("id NOT IN (#{current_user.id},?)",following)
-    end
-
+  def timeline_follows
+    @timeline_follows ||= User.all.ordered_by_most_recent.where("id NOT IN (#{current_user.id},?)", following)
+  end
 end
