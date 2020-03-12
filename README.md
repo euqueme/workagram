@@ -78,7 +78,6 @@ To get a local copy up and running follow these simple example steps.
 
 Ruby: 2.7.0
 Rails: 5.2.4
-Postgres: >=9.5
 
 ### Setup
 
@@ -91,7 +90,7 @@ bundle install
 Setup database with:
 
 ```
-   rails db:migrate
+rails db:migrate
 ```
 
 ### Usage
@@ -99,7 +98,7 @@ Setup database with:
 Start server with:
 
 ```
-    rails server
+rails server
 ```
 
 Open `http://localhost:3000/` in your browser.
@@ -107,7 +106,7 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+rpsec --format documentation
 ```
 
 ### Deployment
@@ -130,7 +129,7 @@ This project was built using these technologies.
 
 María Eugenia Quemé - [@MaruKK](https://twitter.com/MaruKK) - [@euqueme](https://github.com/euqueme) - euqueme@gmail.com
 
-Project Link: [https://github.com/Audrey-Ella-xo/ror-social-scaffold/)
+Project Link: [https://github.com/euqueme/workagram/)
 
 ## 🤝 Contributing
 
