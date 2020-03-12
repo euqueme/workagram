@@ -1,0 +1,39 @@
+
+<section class="float-left border-right">
+  <%= image_tag @user.coverimage.url.to_s, class: "cover_img w-100" if @user.coverimage? %>
+  <%= picture_form(@user, :coverimage) %>
+  <article>
+    <h5 class="text-muted">ALL WORKS / NO REPLIES</h5>
+      <ul class="nav-border-t">
+      <%= timeline_user(@user) %>
+      </ul>
+  </article>
+</section>
+
+<aside class="float-left pl-10">
+  <div class="text-center centered w-100">
+  <%= image_tag @user.photo.url, class: "mt-10 w-50 img-circle text-center" if @user.photo? %>
+  <h5 class="text-center"><%= @user.fullname.upcase %></h5>
+  <%= picture_form(@user, :photo) %>
+  <%= follow_form(@user) %>
+  </div>
+  <ul class="d-flex w-100 border-top border-bottom mt-10">  
+    <li class="float-left w-33 text-center border-right">
+      <h3><%= @user.works.count%></h2> 
+      <p class="text-muted">Works</p>
+    </li>      
+    <li class="float-left w-33 text-center border-right">
+      <h3><%= @user.following.count%></h2> 
+      <p class="text-muted">Following</p>
+    </li>
+    <li class="float-left w-33 text-center">
+      <h3><%= @user.followers.count %></h3>
+      <p class="text-muted">Followers</p>
+    </li>
+  </ul>
+
+  <h5 class="text-muted">FOLLOWED BY</h5>
+  <ul>
+  <%= timeline_followers(@user) %>
+  </ul>
+</aside>

@@ -1,0 +1,26 @@
+<% if logged_in? %>
+<nav class="float-left">
+    <div class="d-flex w-100 pb-10">
+      <%= image_tag current_user.photo.url, class: "photo img-rounded float-left w-25" if current_user.photo? %>
+      <h5 class="text-muted float-left w-75 pl-5"> <%= current_name.upcase %> </h5>
+    </div>
+    <ul class= "d-flex w-100 nav-border">        
+      <li class= "float-left w-50 text-center nav-border-r">
+         <h3 class="text-white"><%= current_user.following.count%></h3> 
+         <p class="text-muted">Following</p>
+      </li>
+      <li class="float-left w-50 text-center">
+        <h3 class="text-white"><%= current_user.followers.count %></h3>
+        <p class="text-muted">Followers</p>
+      </li>
+    </ul>
+    <ul>        
+        <li>
+        <%= link_to 'HOME', root_path %>
+        </li>
+        <li>
+        <%= link_to 'PROFILE', current_user %>
+        </li>
+    </ul>
+</nav>
+<% end %>

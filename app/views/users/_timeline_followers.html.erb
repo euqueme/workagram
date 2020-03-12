@@ -1,0 +1,14 @@
+<% users.each do |user| %>
+    <li>
+    <div>
+      <div>
+        <%= image_tag user.photo.url, class: "photo img-circle float-left" if user.photo? %>
+        <%= link_to user.fullname, user_path(user) %>
+      </div>
+    </div>
+    <%= form_for(current_user.followings.build) do |f| %>
+        <div><%= hidden_field_tag :followed_id, user.id %></div>
+        <%= f.submit "Follow", class: "btn btn-primary"  if current_user != user && following?(user)%>
+    <% end %>
+    </li>
+<% end %>

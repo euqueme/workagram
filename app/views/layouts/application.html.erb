@@ -7,9 +7,31 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500&display=swap" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="d-flex w-100">
+    <%= render 'layouts/navbar' %>
+    <% if logged_in? %>
+    <main class= "float-left w-85">
+    <div class='bg-primary h-80 w-100 py-20 pt-10 d-flex justify-content-between'>
+      <img class="photo" src="https://www.iconsdb.com/icons/preview/white/hammer-xxl.png">
+      <%= link_to "Log out", logout_path, method: :delete, class: "text-white pt-10" if logged_in?%> 
+    <% else %>
+    <main class= "float-left w-100">
+    <div class='bg-primary h-80 w-100  py-20 pt-10 d-flex justify-content-between'>
+      <img class="photo" src="https://www.iconsdb.com/icons/preview/white/hammer-xxl.png">
+      <div>
+        <%= link_to "Log in", login_path, class: "text-white pt-10" %>
+        <%= link_to "Sign up", signup_path, class: "text-white pl-10 pt-10" %>
+      </div>
+     <% end %>
+    </div>
+    <% flash.each do |message_type, message| %>
+      <p class="flash"><%= message %></p>
+    <% end %>
     <%= yield %>
+    </main>
   </body>
 </html>
