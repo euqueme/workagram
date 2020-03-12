@@ -17,16 +17,16 @@
   <%= picture_form(@user, :photo) %>
   <%= follow_form(@user) %>
   </div>
-  <ul class="d-flex justify-content-around border-top border-bottom mt-10">  
-    <li class="text-center border-right">
+  <ul class="d-flex w-100 border-top border-bottom mt-10">  
+    <li class="float-left w-33 text-center border-right">
       <h3><%= @user.works.count%></h2> 
       <p class="text-muted">Works</p>
     </li>      
-    <li class="text-center border-right">
+    <li class="float-left w-33 text-center border-right">
       <h3><%= @user.following.count%></h2> 
       <p class="text-muted">Following</p>
     </li>
-    <li class="text-center">
+    <li class="float-left w-33 text-center">
       <h3><%= @user.followers.count %></h3>
       <p class="text-muted">Followers</p>
     </li>

@@ -1,7 +1,7 @@
 <%= form_for(user) do |f|  %>
   <%= render 'shared/errors', object: f.object %>
-    <span class="d-flex justify-content-end">
-      <%= f.file_field simbol, accept: 'image/jpeg,image/gif,image/png', class: "text-center" %>
-      <%= f.submit "Update #{simbol}", class: "btn btn-primary" %>
+    <span class="d-flex w-100">
+      <%= f.file_field simbol, accept: 'image/jpeg,image/gif,image/png', class: "text-center w-75 float-left" %>
+      <%= f.submit "Update #{simbol}", class: "btn btn-primary float-left" %>
     </span>
 <% end %>
