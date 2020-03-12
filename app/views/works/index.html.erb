@@ -1,23 +1,24 @@
-<section>
-<h3>WORKAGRAM SOMETHING</h3>
+<section class="float-left">
+  <article>
+    <h5 class="text-muted">WORKAGRAM SOMETHING</h5>
     <%= form_for @work, url: {action: "create"} do |f| %>
       <%= render 'shared/errors', object: f.object %>
-      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-      <%= f.text_field :text, :placeholder => "New comment", style: "width: 500px;height: 25px;", class: 'text_w' %>
-      <%= f.submit "Post" %>
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: "pl-5" %>
+      <%= f.text_field :text, :placeholder => "New comment", class: "pl-5 ml-5" %>
+      <%= f.submit "Post", class: "btn btn-primary" %>
     <% end %>
+  </article>
+  <article>
+  <h5 class="text-muted">NEW WORKAGRAMS</h5>
+      <ul class="nav-border-t pt-10">
+      <%= timeline_works %>
+      </ul>
+  </article>   
 </section>
 
-<article>
-<h3>NEW WORKAGRAMS</h3>
-  <ul>
-  <%= timeline_works %>
+<aside class="float-left">
+<h5 class="text-muted pt-10">WHO TO FOLLOW</h5>
+  <ul class="nav-border-t pt-10">
+    <%= render @timeline_follows %>
   </ul>
-</article>
-
-<aside>
-<h3>WHO TO FOLLOW</h3>
-<ul >
-<%= render @timeline_follows %>
-</ul>
 </aside>

@@ -1,25 +1,23 @@
+<section class="pl-10">
 <h1>Sign up</h1>
-
-<div>
   <div>
     <%= form_for @user, url: {action: "create"} do |f| %>
       <%= render 'shared/errors', object: f.object %>
 
       <%= f.label :username %>
       <%= f.text_field :username%>
-
-      <%= f.label 'Full name' %>
+      <br>
+      <%= f.label 'Full name', class: "pt-10" %>
       <%= f.text_field :fullname %>
-
-      <%= f.label 'Photo' %>  
+      <br>
+      <%= f.label 'Photo', class: "pt-10" %>  
       <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %>
-
-      
-      <%= f.label 'cover image' %>
+      <br>
+      <%= f.label 'cover image', class: "pt-10" %>
       <%= f.file_field :coverimage, accept: 'image/jpeg,image/gif,image/png' %>
-
+      <br>
       <%= f.submit "Create my account" %>
     <% end %>
   </div>
-</div>
+</section>
 

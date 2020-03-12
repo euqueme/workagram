@@ -1,13 +1,13 @@
 <% works.each do |work| %>
-<li >
-  <div>
-    <div>
-      <%= image_tag work.author.photo.url, class: "photo float-left" if work.author.photo? %>
-      <%= link_to work.author.fullname, user_path(work.author) %>    
-    </div>
-      <%= image_tag work.picture.url, class: "work_p rounded float-left" %>
+<li>
+  <div class="d-flex w-100 pt-10">
+    <%= image_tag work.author.photo.url, class: "photo" if work.author.photo? %>
+    <%= link_to work.author.fullname, user_path(work.author), class: "text-body pt-10 pl-5" %>    
   </div>
-  <p>
+  <br>
+  <%= image_tag work.picture.url, class: "w-100 float-left pt-10 mb-10" %>
+  <br>
+  <p class="pt-20 text-muted w-100">
     <%= work.text %>
   </p>
 </li>

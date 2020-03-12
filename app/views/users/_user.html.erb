@@ -1,12 +1,10 @@
-<li >
-<div>
-  <div>
-    <%= image_tag user.photo.url, class: "photo img-rounded float-left" if user.photo? %>
-    <%= link_to user.fullname, user_path(user) %>
+<li>
+  <div class="pt-10">
+    <%= image_tag user.photo.url, class: "photo img-circle float-left" if user.photo? %>
+    <%= link_to user.fullname, user_path(user), class: "pl-5" %>
   </div>
-</div>
-<%= form_for(current_user.followings.build) do |f| %>
+  <%= form_for(current_user.followings.build) do |f| %>
     <div><%= hidden_field_tag :followed_id, user.id %></div>
-    <%= f.submit "Follow" %>
-<% end %>
+    <%= f.submit "Follow", class: "btn btn-primary ml-5" %>
+  <% end %>
 </li>
