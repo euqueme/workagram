@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Following, type: :model do
   context 'Validation tests' do
     subject { Following.new }
-    let(:follower) { User.create(username: 'maru', fullname: 'Maria Eugenia Queme') }
+    let(:follower) { User.create(username: 'maruk', fullname: 'Maria Eugenia Queme') }
     let(:followed) { User.create(username: 'audrey', fullname: 'Audrey Odiaka') }
 
     it 'valid with follower_id and followed_id' do
@@ -30,7 +30,7 @@ RSpec.describe Following, type: :model do
   end
 
   context 'Custom Validation tests' do
-    let(:follower) { User.create(username: 'maru', fullname: 'Maria Eugenia Queme') }
+    let(:follower) { User.create(username: 'maruk', fullname: 'Maria Eugenia Queme') }
     let(:followed) { User.create(username: 'audrey', fullname: 'Audrey Odiaka') }
 
     it 'not valid if follower is already created' do

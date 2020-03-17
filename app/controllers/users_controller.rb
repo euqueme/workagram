@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       flash[:success] = 'User Created'
       redirect_to login_path
     else
-      flash[:error] = 'User Creation failed'
+      flash[:danger] = 'User Creation failed'
       render 'new'
     end
   end
@@ -28,8 +28,8 @@ class UsersController < ApplicationController
       flash[:success] = 'User updated'
       redirect_to current_user
     else
-      flash[:error] = 'User update failed'
-      render current_user
+      flash[:danger] = 'User update failed'
+      render 'show'
     end
   end
 

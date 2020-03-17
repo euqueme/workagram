@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  validates :username, presence: true, uniqueness: true
-  validates :fullname, presence: true
+  validates :username, presence: true, uniqueness: true, length: { minimum: 5, maximum: 25 }
+  validates :fullname, presence: true, length: { minimum: 6, maximum: 100 }
 
   has_many :works, foreign_key: :author_id
 
