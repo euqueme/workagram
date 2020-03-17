@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       log_out
       flash[:info] = 'User Logged out.'
     else
-      flash[:info] = "User wasn't even logged in."
+      flash[:danger] = "User wasn't even logged in."
     end
     redirect_to root_url
   end

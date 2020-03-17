@@ -8,10 +8,10 @@ class WorksController < ApplicationController
   def create
     @work = current_user.works.build(work_params)
     if @work.save
-      flash[:success] = 'work created!'
+      flash[:success] = 'Work created!'
       redirect_to root_path
     else
-      flash.now[:error] = "couldn\'nt create work"
+      flash.now[:danger] = "Couldn\'nt create work"
       render 'index'
     end
     

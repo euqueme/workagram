@@ -1,3 +1,12 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.photo {
+    width: 50px;
+    height: 50px;
+
+}
+
+.cover_img {
+    height: 300px;
+    margin: auto;
+    object-fit: cover;
+    
+}

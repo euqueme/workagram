@@ -6,7 +6,7 @@ class FollowingsController < ApplicationController
     if follow.save
       flash[:success] = "Following User"
     else
-      flash[:error] = "You can't follow the User"
+      flash[:danger] = "You can't follow the User"
     end
       redirect_to root_path
   end
