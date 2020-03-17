@@ -3,17 +3,18 @@ class WorksController < ApplicationController
 
   def index
     @work = Work.new
-    timeline_follows
   end
 
   def create
     @work = current_user.works.build(work_params)
     if @work.save
       flash[:success] = 'work created!'
+      redirect_to root_path
     else
-      flash[:error] = "couldn\'nt create work"
+      flash.now[:error] = "couldn\'nt create work"
+      render 'index'
     end
-    redirect_to root_path
+    
   end
 
   private
@@ -22,7 +23,4 @@ class WorksController < ApplicationController
     params.require(:work).permit(:text, :picture)
   end
 
-  def timeline_follows
-    @timeline_follows ||= User.all.ordered_by_most_recent.where("id NOT IN (#{current_user.id},?)", following)
-  end
 end

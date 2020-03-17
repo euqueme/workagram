@@ -3,4 +3,6 @@ class Work < ApplicationRecord
   scope :sorted_by_most_recent, -> { order(created_at: :desc) }
   validates :picture, presence: true
   mount_uploader :picture, PictureUploader
+
+  validates :text, length: { maximum: 255 }
 end
