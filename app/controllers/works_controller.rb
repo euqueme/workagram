@@ -14,7 +14,6 @@ class WorksController < ApplicationController
       flash.now[:danger] = "Couldn\'nt create work"
       render 'index'
     end
-    
   end
 
   private
@@ -22,5 +21,4 @@ class WorksController < ApplicationController
   def work_params
     params.require(:work).permit(:text, :picture)
   end
-
 end

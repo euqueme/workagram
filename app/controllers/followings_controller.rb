@@ -4,11 +4,11 @@ class FollowingsController < ApplicationController
   def create
     follow = Following.new(follower_id: current_user.id, followed_id: following_params)
     if follow.save
-      flash[:success] = "Following User"
+      flash[:success] = 'Following User'
     else
       flash[:danger] = "You can't follow the User"
     end
-      redirect_to root_path
+    redirect_to root_path
   end
 
   private
