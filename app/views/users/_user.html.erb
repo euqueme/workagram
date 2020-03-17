@@ -5,6 +5,6 @@
   </div>
   <%= form_for(current_user.followings.build) do |f| %>
     <div><%= hidden_field_tag :followed_id, user.id %></div>
-    <%= f.submit "Follow", class: "btn btn-primary ml-5" %>
+    <%= f.submit "Follow", class: "btn btn-primary ml-5" if current_user != user && following?(user)%>
   <% end %>
 </li>
