@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Home management', type: :feature do
-  let(:user) { User.create(username: 'maru', fullname: 'Maria Eugenia Queme') }
+  let(:user) { User.create(username: 'maruk', fullname: 'Maria Eugenia Queme') }
   let(:picture) { 'app/assets/images/1000.png' }
   let(:followed) { User.create(username: 'audrey', fullname: 'Audrey Odiaka') }
 
@@ -16,7 +16,7 @@ RSpec.describe 'Home management', type: :feature do
     click_button 'Post'
     sleep(3)
 
-    expect(page). to have_content('work created!')
+    expect(page). to have_content('Work created!')
     expect(page).to have_css("img[src*='1000.png']")
   end
 
@@ -30,7 +30,7 @@ RSpec.describe 'Home management', type: :feature do
     click_button 'Post'
     sleep(3)
 
-    expect(page). to have_content("couldn\'nt create work")
+    expect(page). to have_content("Couldn'nt create work")
   end
 
   scenario 'See following works' do

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'login followed by logout', type: :feature do
-  let(:user) { User.create(username: 'maru', fullname: 'Maria Eugenia Queme') }
+  let(:user) { User.create(username: 'maruk', fullname: 'Maria Eugenia Queme') }
 
   scenario 'login page' do
     visit root_path

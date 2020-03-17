@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Profile management', type: :feature do
-  let(:user) { User.create(username: 'maru', fullname: 'Maria Eugenia Queme') }
+  let(:user) { User.create(username: 'maruk', fullname: 'Maria Eugenia Queme') }
   let(:picture) { 'app/assets/images/1000.png' }
   let(:followed) { User.create(username: 'audrey', fullname: 'Audrey Odiaka') }
 

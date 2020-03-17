@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     subject { User.new }
 
     it 'valid with username and fullname' do
-      subject.username = 'maru'
+      subject.username = 'maruk'
       subject.fullname = 'Maria Eugenia Queme'
       expect(subject).to be_valid
     end
@@ -16,13 +16,13 @@ RSpec.describe User, type: :model do
     end
 
     it 'not valid without fullname' do
-      subject.username = 'maru'
+      subject.username = 'maruk'
       expect(subject).to_not be_valid
     end
 
     it 'adds a new User' do
       count = User.count
-      subject.update!(username: 'maru', fullname: 'Maria Eugenia Queme')
+      subject.update!(username: 'maruk', fullname: 'Maria Eugenia Queme')
       expect(User.count).to eq(count + 1)
     end
   end
@@ -39,10 +39,10 @@ RSpec.describe User, type: :model do
   end
 
   context 'Associations tests' do
-    subject { User.create(username: 'maru', fullname: 'Maria Eugenia Queme') }
+    subject { User.create(username: 'maruk', fullname: 'Maria Eugenia Queme') }
     let(:work) { subject.works.build(text: 'job update', picture: 'xxx.jpg') }
     let(:follow) { subject.following.build(username: 'audrey', fullname: 'Audrey Odiaka') }
-    let(:follower) { subject.followers.build(username: 'erik', fullname: 'Erik Nava') }
+    let(:follower) { subject.followers.build(username: 'eriko', fullname: 'Erik Nava') }
 
     it 'has many works' do
       expect(subject.respond_to?(:works)).to be_truthy
