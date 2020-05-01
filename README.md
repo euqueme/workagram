@@ -17,6 +17,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+![Hireable](https://cdn.rawgit.com/hiendv/hireable/master/styles/default/yes.svg)
 
 <!-- PROJECT LOGO -->
 <br />
@@ -60,9 +61,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project is based on twitter but I have given it my own theme which are pictures from work environment situations
+[![asciicast][product-screenshot]](https://www.loom.com/share/b8568a718f344026ab156c3cd6fe24c2)
 
-[![Product Name Screen Shot][product-screenshot]](https://maru-workagram.herokuapp.com/)
+This project is based on twitter but I have given it my own theme which are pictures from work environment situations
 
 This is the Capstone project of the Microverse Ruby on Rails Curriculum
 
@@ -102,6 +103,42 @@ rails server
 ```
 
 Open `http://localhost:3000/` in your browser.
+
+#### Create User
+
+Fill the sign up form to create a user, the pictures are optional
+
+![screenshot](app/assets/images/workagram_sign_up.png)
+
+#### Login
+
+Use only the username to login
+
+![screenshot](app/assets/images/workagram_log_in.png)
+
+#### Post a work related pic
+
+You must choose a file but the text is optional
+
+![screenshot](app/assets/images/workagram_post.png)
+
+#### Follow another user
+
+Click on the blue follow button of any user to follow them
+
+![screenshot](app/assets/images/workagram_follow.png)
+
+#### Edit profile picture
+
+Choose file and click on the Update photo button
+
+![screenshot](app/assets/images/workagram_photo.png)
+
+#### Edit cover image 
+
+Choose file and click on the update coverimage button
+
+![screenshot](app/assets/images/workagram_cover.png)
 
 ### Run tests
 
