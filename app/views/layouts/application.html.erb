@@ -16,12 +16,12 @@
     <% if logged_in? %>
     <main class= "float-left w-85">
     <div class='bg-primary h-80 w-100 py-20 pt-10 d-flex justify-content-between'>
-      <img class="photo" src="https://www.iconsdb.com/icons/preview/white/hammer-xxl.png">
+      <img class="photo" src="../assets/hammer-64.png">
       <%= link_to "Log out", logout_path, method: :delete, class: "text-white pt-10" if logged_in?%> 
     <% else %>
     <main class= "float-left w-100">
     <div class='bg-primary h-80 w-100  py-20 pt-10 d-flex justify-content-between'>
-      <img class="photo" src="https://www.iconsdb.com/icons/preview/white/hammer-xxl.png">
+      <img class="photo" src="../assets/hammer-64.png">
       <div>
         <%= link_to "Log in", login_path, class: "text-white pt-10" %>
         <%= link_to "Sign up", signup_path, class: "text-white pl-10 pt-10" %>
