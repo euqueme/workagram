@@ -69,7 +69,11 @@ This is the Capstone project of the Microverse Ruby on Rails Curriculum
 
 ### Live Demo
 
-[Live Demo](https://maru-workagram.herokuapp.com/)
+watch the walkthrough video first
+
+https://www.loom.com/share/b8568a718f344026ab156c3cd6fe24c2
+
+Now go to the [Live Demo](https://maru-workagram.herokuapp.com/)
 
 ### Getting Started
 
