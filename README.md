@@ -63,13 +63,13 @@
 
 [![asciicast][product-screenshot]](https://www.loom.com/share/b8568a718f344026ab156c3cd6fe24c2)
 
-This project is based on twitter but I have given it my own theme which are pictures from work environment situations
+This project is based on Twitter, and has been given an individual theme created from work environment-related photos.
 
 This is the Capstone project of the Microverse Ruby on Rails Curriculum
 
 ### Live Demo
 
-watch the walkthrough video first
+Watch the walkthrough video first
 
 https://www.loom.com/share/b8568a718f344026ab156c3cd6fe24c2
 
@@ -110,7 +110,7 @@ Open `http://localhost:3000/` in your browser.
 
 #### Create User
 
-Fill the sign up form to create a user, the pictures are optional
+Fill the sign up form to create a user. The pictures are optional.
 
 ![screenshot](app/assets/images/workagram_sign_up.png)
 
@@ -170,7 +170,7 @@ This project was built using these technologies.
 
 María Eugenia Quemé - [@MaruKK](https://twitter.com/MaruKK) - [@euqueme](https://github.com/euqueme) - euqueme@gmail.com
 
-Project Link: [https://github.com/euqueme/workagram/)
+Project [Link](https://github.com/euqueme/workagram/)
 
 ## 🤝 Contributing
 
