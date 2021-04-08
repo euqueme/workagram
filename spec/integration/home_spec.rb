@@ -10,13 +10,13 @@ RSpec.describe 'Home management', type: :feature do
     fill_in 'session_username', with: user.username
     click_button 'Log in'
     sleep(3)
-    expect(page). to have_content('WORKAGRAM SOMETHING')
+    expect(page).to have_content('WORKAGRAM SOMETHING')
 
     attach_file 'work_picture', picture
     click_button 'Post'
     sleep(3)
 
-    expect(page). to have_content('Work created!')
+    expect(page).to have_content('Work created!')
     expect(page).to have_css("img[src*='1000.png']")
   end
 
@@ -25,12 +25,12 @@ RSpec.describe 'Home management', type: :feature do
     fill_in 'session_username', with: user.username
     click_button 'Log in'
     sleep(3)
-    expect(page). to have_content('WORKAGRAM SOMETHING')
+    expect(page).to have_content('WORKAGRAM SOMETHING')
 
     click_button 'Post'
     sleep(3)
 
-    expect(page). to have_content("Couldn'nt create work")
+    expect(page).to have_content("Couldn'nt create work")
   end
 
   scenario 'See following works' do
@@ -52,6 +52,6 @@ RSpec.describe 'Home management', type: :feature do
     click_button 'Log in'
     sleep(3)
 
-    expect(page). to have_content('Followed job update')
+    expect(page).to have_content('Followed job update')
   end
 end
