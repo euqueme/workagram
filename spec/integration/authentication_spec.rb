@@ -11,6 +11,6 @@ RSpec.describe 'login followed by logout', type: :feature do
     expect(page).to have_content('User Logged in')
     click_on 'Log out'
     sleep(3)
-    expect(page). to have_content('Please log in')
+    expect(page).to have_content('Please log in')
   end
 end
